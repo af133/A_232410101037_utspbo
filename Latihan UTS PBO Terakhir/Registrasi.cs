@@ -32,7 +32,7 @@ namespace Latihan_UTS_PBO_Terakhir
                             login.Show();
                             this.Hide();
                         }
-                        else { notif.Text = "Password harus diisi"; notif.Visible = true; }
+                        else { notif.Text = "Password harus didddddisi"; notif.Visible = true; }
                     }
                     else { notif.Text = "Username harus diisi"; notif.Visible = true; }
                 }
