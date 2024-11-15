@@ -34,7 +34,7 @@ namespace Latihan_UTS_PBO_Terakhir
                         }
                         else { notif.Text = "Password harus didddddisi"; notif.Visible = true; }
                     }
-                    else { notif.Text = "Username harus diisi"; notif.Visible = true; }
+                    else { notif.Text = "Username harus diisirrrr"; notif.Visible = true; }
                 }
                 else { notif.Text = "No HP harus diisi"; notif.Visible = true; }
             }
