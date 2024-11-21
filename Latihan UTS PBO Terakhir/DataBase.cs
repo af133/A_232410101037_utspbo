@@ -13,7 +13,7 @@ namespace Data_Base
     internal class DataBase
     {
         private static readonly string DB_HOST = "localhost";
-        private static readonly string DB_DATABASE = "UTS PBO";
+        private static readonly string DB_DATABASE = "Movie";
         private static readonly string DB_USERNAME = "postgres";
         private static readonly string DB_PASSWORD = "1234";
         private static readonly string DB_PORT = "5432";
@@ -60,8 +60,8 @@ namespace Data_Base
             }
         }
 
-        public static void commandExecutor(string query, NpgsqlParameter[] parameters = null)// method ini
-                                                                                             //digunakan untuk INSERT, DELETE, AND UPDATE
+        public static void commandExecutor(string query, NpgsqlParameter[] parameters = null)
+                                                                                             
         {
             try
             {
@@ -82,7 +82,7 @@ namespace Data_Base
         }
         public static bool cekLogin(string username, string password)
         {
-            string query = "select count(*) from pengguna where username = @username and password = @password";
+            string query = "select count(*) from admin where username = @username and password = @password";
             NpgsqlParameter[] parameter = new NpgsqlParameter[]
             {
                 new NpgsqlParameter("username", username),
@@ -95,14 +95,14 @@ namespace Data_Base
             closeConnection();
             return hasil > 0;
         }
-        public static void registrasi_(string nama,string nohp,string username, string password) 
+        public static void registrasi_(string nama,string no_hp,string username, string password) 
         {
-            string query = "insert into pengguna (nama, nohp, username, password) values" +
-                "(@nama,@nohp,@username,@password)";
+            string query = "insert into admin (nama, no_hp, username, password) values" +
+                "(@nama,@no_hp,@username,@password)";
             NpgsqlParameter[] paramater = new NpgsqlParameter[]
             {
                 new NpgsqlParameter ("nama",nama),
-                new NpgsqlParameter ("nohp", nohp),
+                new NpgsqlParameter ("no_hp", no_hp),
                 new NpgsqlParameter ("username",username),
                 new NpgsqlParameter ("password",password),
             };
@@ -116,7 +116,7 @@ namespace Data_Base
         }
         public static DataTable readeData() 
         {
-            string query = "select * from pengguna order by id asc";
+            string query = "select * from admin order by id asc";
             try
             {
                 openConnection();
@@ -155,7 +155,7 @@ namespace Data_Base
             nohp = "";
             username = "";
             password = "";
-            string query = " select * from pengguna where id = @id";
+            string query = " select * from admin where id = @id";
             command.CommandText = query;
             command.Parameters.AddWithValue("@id", id);
             var reader= command.ExecuteReader();
@@ -167,6 +167,75 @@ namespace Data_Base
                 password = reader["password"].ToString();
             }
             
-        }    
+        }
+        public static void addMovie(string nama, string tahun_rilis, int id_genre)
+        {
+            string query = "insert into film_ (nama, tahun_rilis, id_genre) values" +
+                "(@nama,@tahun_rilis,@id_genre)";
+            NpgsqlParameter[] paramater = new NpgsqlParameter[]
+            {
+                new NpgsqlParameter ("nama",nama),
+                new NpgsqlParameter ("tahun_rilis", tahun_rilis),
+                new NpgsqlParameter ("id_genre",id_genre),
+            };
+            openConnection();
+            command.CommandText = query;
+            command.Parameters.AddRange(paramater);
+            command.ExecuteNonQuery();
+            closeConnection();
+
+
+        }
+        public static void hapusFilm(int id)
+        {
+            string query = "delete from film_ where id=@id";
+            NpgsqlParameter[] paramater = new NpgsqlParameter[]
+            {
+                new NpgsqlParameter ("id",id),
+            };
+            openConnection();
+            command.CommandText = query;
+            command.Parameters.AddRange(paramater);
+            command.ExecuteNonQuery();
+            closeConnection();
+
+
+        }
+        public static DataTable readGenre()
+        {
+            string query = "select * from genre order by  id_genre asc";
+            try
+            {
+                openConnection();
+                DataTable dt = new DataTable();
+                command.CommandText = query;
+                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(command);
+                dataAdapter.Fill(dt);
+
+                closeConnection();
+                return dt;
+
+            }
+            catch (Exception ex) { throw new Exception("Gagal membaca: " + ex.Message); }
+
+        }
+        public static DataTable readeData_()
+        {
+            string query = "select p.nama,p.tahun_rilis,g.nama_genre from film_ p join genre g on (p.id_genre=g.id_genre) order by id asc";
+            try
+            {
+                openConnection();
+                DataTable dt = new DataTable();
+                command.CommandText = query;
+                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(command);
+                dataAdapter.Fill(dt);
+
+                closeConnection();
+                return dt;
+
+            }
+            catch (Exception ex) { throw new Exception("Gagal membaca: " + ex.Message); }
+
+        }
     }
 }

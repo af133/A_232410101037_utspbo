@@ -11,22 +11,36 @@ using System.Windows.Forms;
 
 namespace Latihan_UTS_PBO_Terakhir
 {
-    public partial class HalamanKontak : Form
+    public partial class Halaman_Movie : Form
     {
-        public HalamanKontak()
+        public Halaman_Movie()
         {
             InitializeComponent();
             AmbilData();
         }
         private void AmbilData()
         {
-            DataTable dt = DataBase.readeData();
+            DataTable dt = DataBase.readeData_();
             dataGridView1.DataSource = dt;
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            
             
+        }
+
+        private void hapusFilm_Click(object sender, EventArgs e)
+        {
+            HapusFilm hapus = new HapusFilm();
+            hapus.Show();
+            this.Hide();
+        }
+
+        private void tambahFilm_Click(object sender, EventArgs e)
+        {
+            Tambah_Film tambah = new Tambah_Film();
+            tambah.Show();
+            this.Hide();
         }
     }
 }

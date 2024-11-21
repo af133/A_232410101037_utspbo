@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.kontak = new System.Windows.Forms.Button();
             this.registrasi = new System.Windows.Forms.Button();
             this.login = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -44,23 +43,11 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Selamat Datang";
             // 
-            // kontak
-            // 
-            this.kontak.AutoSize = true;
-            this.kontak.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.kontak.Location = new System.Drawing.Point(157, 253);
-            this.kontak.Name = "kontak";
-            this.kontak.Size = new System.Drawing.Size(122, 57);
-            this.kontak.TabIndex = 1;
-            this.kontak.Text = "Kontak";
-            this.kontak.UseVisualStyleBackColor = false;
-            this.kontak.Click += new System.EventHandler(this.kontak_Click);
-            // 
             // registrasi
             // 
-            this.registrasi.Location = new System.Drawing.Point(322, 253);
+            this.registrasi.Location = new System.Drawing.Point(175, 234);
             this.registrasi.Name = "registrasi";
-            this.registrasi.Size = new System.Drawing.Size(119, 57);
+            this.registrasi.Size = new System.Drawing.Size(183, 76);
             this.registrasi.TabIndex = 2;
             this.registrasi.Text = "Registrasi";
             this.registrasi.UseVisualStyleBackColor = true;
@@ -68,9 +55,9 @@
             // 
             // login
             // 
-            this.login.Location = new System.Drawing.Point(493, 253);
+            this.login.Location = new System.Drawing.Point(412, 234);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(110, 57);
+            this.login.Size = new System.Drawing.Size(186, 76);
             this.login.TabIndex = 3;
             this.login.Text = "Login";
             this.login.UseVisualStyleBackColor = true;
@@ -84,7 +71,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.login);
             this.Controls.Add(this.registrasi);
-            this.Controls.Add(this.kontak);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -96,7 +82,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button kontak;
         private System.Windows.Forms.Button registrasi;
         private System.Windows.Forms.Button login;
     }

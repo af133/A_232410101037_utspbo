@@ -81,23 +81,23 @@
     <Compile Include="Dasboard_.Designer.cs">
       <DependentUpon>Dasboard_.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="Tambah_Film.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Tambah_Film.Designer.cs">
+      <DependentUpon>Tambah_Film.cs</DependentUpon>
     </Compile>
-    <Compile Include="ubahdata.cs">
+    <Compile Include="HapusFilm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ubahdata.Designer.cs">
-      <DependentUpon>ubahdata.cs</DependentUpon>
+    <Compile Include="HapusFilm.Designer.cs">
+      <DependentUpon>HapusFilm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HalamanKontak.cs">
+    <Compile Include="Halaman_Movie.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HalamanKontak.Designer.cs">
-      <DependentUpon>HalamanKontak.cs</DependentUpon>
+    <Compile Include="Halaman_Movie.Designer.cs">
+      <DependentUpon>Halaman_Movie.cs</DependentUpon>
     </Compile>
     <Compile Include="Registrasi.cs">
       <SubType>Form</SubType>
@@ -119,8 +119,11 @@
     <EmbeddedResource Include="Dasboard_.resx">
       <DependentUpon>Dasboard_.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HalamanKontak.resx">
-      <DependentUpon>HalamanKontak.cs</DependentUpon>
+    <EmbeddedResource Include="Halaman_Movie.resx">
+      <DependentUpon>Halaman_Movie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HapusFilm.resx">
+      <DependentUpon>HapusFilm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -137,8 +140,8 @@
     <EmbeddedResource Include="Registrasi.resx">
       <DependentUpon>Registrasi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ubahdata.resx">
-      <DependentUpon>ubahdata.cs</DependentUpon>
+    <EmbeddedResource Include="Tambah_Film.resx">
+      <DependentUpon>Tambah_Film.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

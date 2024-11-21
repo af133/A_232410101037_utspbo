@@ -29,7 +29,7 @@ namespace Latihan_UTS_PBO_Terakhir
 
         private void ubah_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

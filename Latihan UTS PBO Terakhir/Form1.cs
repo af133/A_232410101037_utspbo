@@ -31,12 +31,5 @@ namespace Latihan_UTS_PBO_Terakhir
             this.Hide();
         }
 
-        private void kontak_Click(object sender, EventArgs e)
-        {
-            HalamanKontak kontak = new HalamanKontak();
-            kontak.Show();
-            this.Hide();    
-
-        }
     }
 }

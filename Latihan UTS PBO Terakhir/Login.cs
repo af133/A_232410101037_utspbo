@@ -28,8 +28,8 @@ namespace Latihan_UTS_PBO_Terakhir
                     bool hasilAkun = DataBase.cekLogin(username.Text,password1.Text);
                     if (hasilAkun == true)
                     {
-                       Dasboard db= new Dasboard();
-                        db.Show();
+                       Halaman_Movie movie = new Halaman_Movie();
+                        movie.Show();
                         this.Hide();
                         
                     }
